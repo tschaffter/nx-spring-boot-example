@@ -30,5 +30,8 @@
         "^build"
       ]
     }
-  }
+  },
+  "plugins": [
+    "@nxrocks/nx-spring-boot"
+  ]
 }
