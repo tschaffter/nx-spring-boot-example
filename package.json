@@ -15,6 +15,7 @@
   "devDependencies": {
     "@nrwl/cli": "14.3.6",
     "@nrwl/workspace": "14.3.6",
+    "@nx-tools/nx-docker": "^3.0.0",
     "@nxrocks/nx-spring-boot": "^4.1.0",
     "nx": "14.3.6",
     "prettier": "^2.6.2",
