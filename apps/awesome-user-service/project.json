@@ -3,11 +3,24 @@
   "sourceRoot": "apps/awesome-user-service/src",
   "projectType": "application",
   "targets": {
+    "prepare": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "command": "shx cp -n .env.example .env",
+        "cwd": "apps/challenge-user-service"
+      }
+    },
     "build": {
       "executor": "@nxrocks/nx-spring-boot:build",
       "options": {
         "root": "apps/awesome-user-service"
-      }
+      },
+      "dependsOn": [
+        {
+          "target": "install",
+          "projects": "dependencies"
+        }
+      ]
     },
     "test": {
       "executor": "@nxrocks/nx-spring-boot:test",
@@ -33,23 +46,45 @@
         "root": "apps/awesome-user-service"
       }
     },
-    "run": {
-      "executor": "@nxrocks/nx-spring-boot:run",
-      "options": {
-        "root": "apps/awesome-user-service"
-      }
-    },
     "serve": {
       "executor": "@nxrocks/nx-spring-boot:serve",
       "options": {
         "root": "apps/awesome-user-service"
-      }
+      },
+      "dependsOn": [
+        {
+          "target": "build",
+          "projects": "self"
+        },
+        {
+          "target": "prepare",
+          "projects": "self"
+        },
+        {
+          "target": "serve-detach",
+          "projects": "dependencies"
+        }
+      ]
     },
-    "buildImage": {
+    "build-image": {
       "executor": "@nxrocks/nx-spring-boot:buildImage",
       "options": {
         "root": "apps/awesome-user-service"
-      }
+      },
+      "dependsOn": [
+        {
+          "target": "build",
+          "projects": "self"
+        },
+        {
+          "target": "prepare",
+          "projects": "self"
+        },
+        {
+          "target": "serve-detach",
+          "projects": "dependencies"
+        }
+      ]
     },
     "buildInfo": {
       "executor": "@nxrocks/nx-spring-boot:buildInfo",
