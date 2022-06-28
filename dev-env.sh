@@ -31,6 +31,10 @@ function workspace-install {
   yarn install --frozen-lockfile
 }
 
+function workspace-clean {
+  nx run-many --all --target=clean
+}
+
 function workspace-lint {
   nx run-many --all --target=lint
 }
