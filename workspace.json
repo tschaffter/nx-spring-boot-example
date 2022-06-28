@@ -2,6 +2,7 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
-    "util": "libs/util"
+    "awesome-mariadb": "apps/awesome-mariadb",
+    "shared-util": "libs/shared/util"
   }
 }
