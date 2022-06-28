@@ -66,22 +66,24 @@
         }
       ]
     },
-    "build-image": {
+    "buildImage": {
       "executor": "@nxrocks/nx-spring-boot:buildImage",
       "options": {
         "root": "apps/awesome-user-service"
+      }
+    },
+    "build-image": {
+      "executor": "@nx-tools/nx-docker:build",
+      "options": {
+        "context": "apps/awesome-user-service",
+        "push": false,
+        "tags": [
+          "tschaffter/awesome-user-service:latest"
+        ]
       },
       "dependsOn": [
         {
-          "target": "build",
-          "projects": "self"
-        },
-        {
-          "target": "prepare",
-          "projects": "self"
-        },
-        {
-          "target": "serve-detach",
+          "target": "install",
           "projects": "dependencies"
         }
       ]
