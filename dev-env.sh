@@ -60,7 +60,7 @@ function workspace-nx-cloud-help {
 }
 
 function workspace-welcome {
-  echo "Welcome to the Nx Spring Book Example! 👋"
+  echo "Welcome to the Nx Spring Boot Example! 👋"
 
   if [ ! -d "node_modules" ]; then
     printf "%s\n" \
