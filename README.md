@@ -58,5 +58,8 @@ This command:
 <!-- Links -->
 
 [Nx workspace]: https://nx.dev/
-[Apache License 2.0]: LICENSE.txt
 [@nxrocks/nx-spring-boot]: https://github.com/tinesoft/nxrocks/tree/develop/packages/nx-spring-boot
+[Docker Engine]: https://docs.docker.com/get-docker/
+[compose-v2]: https://docs.docker.com/compose/cli-command/
+[Visual Studio Code]: https://code.visualstudio.com/
+[Apache License 2.0]: LICENSE.txt
