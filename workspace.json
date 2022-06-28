@@ -3,6 +3,7 @@
   "version": 2,
   "projects": {
     "awesome-mariadb": "apps/awesome-mariadb",
+    "awesome-user-service": "apps/awesome-user-service",
     "shared-util": "libs/shared/util"
   }
 }
