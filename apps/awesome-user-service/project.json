@@ -93,5 +93,11 @@
       }
     }
   },
-  "tags": []
+  "tags": [
+    "type:service",
+    "scope:backend"
+  ],
+  "implicitDependencies": [
+    "shared-util"
+  ]
 }
