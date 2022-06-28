@@ -27,6 +27,12 @@ approach, see [CONTRIBUTING.md](.github/CONTRIBUTING.md).
 
 Then open your fork repo inside our devcontainer.
 
+### Prepare the workspace
+
+Install Node.js packages.
+
+    yarn install --frozen-lockfile
+
 ### Start the user service
 
 ```console
