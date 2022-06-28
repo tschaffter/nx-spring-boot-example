@@ -10,8 +10,8 @@
 		<!-- lookup parent from repository -->
 	</parent>
 
-	<groupId>org.example.awesome</groupId>
-	<artifactId>user-service</artifactId>
+	<groupId>com.example.awesome</groupId>
+	<artifactId>awesome-user-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>awesome-user-service</name>
 	<description>Demo project for Spring Boot</description>
@@ -31,13 +31,13 @@
 			<scope>test</scope>
 		</dependency>
 
-    <dependency>
-      <groupId>org.example.awesome</groupId>
-      <artifactId>util</artifactId>
-      <version>0.0.1-SNAPSHOT</version>
-      <scope>system</scope>
-      <systemPath>${pom.basedir}/lib/util-0.0.1-SNAPSHOT.jar</systemPath>
-    </dependency>
+		<dependency>
+			<groupId>com.example.awesome</groupId>
+			<artifactId>awesome-util</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<scope>system</scope>
+			<systemPath>${pom.basedir}/lib/awesome-util-0.0.1-SNAPSHOT.jar</systemPath>
+		</dependency>
 	</dependencies>
 
 	<build>

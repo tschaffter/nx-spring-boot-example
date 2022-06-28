@@ -27,11 +27,19 @@ approach, see [CONTRIBUTING.md](.github/CONTRIBUTING.md).
 
 Then open your fork repo inside our devcontainer.
 
+### Prepare the workspace
+
+Source `dev-env.sh`. This step can be skipped when working in the devcontainer.
+
+    . ./dev-env.sh
+
+Install Node.js packages (after source):
+
+    workspace-install
+
 ### Start the user service
 
-```console
-yarn nx serve awesome-user-service
-```
+    nx serve awesome-user-service
 
 This command:
 
