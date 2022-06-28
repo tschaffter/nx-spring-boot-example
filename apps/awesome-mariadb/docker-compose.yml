@@ -1,0 +1,24 @@
+version: "3.8"
+
+services:
+  awesome-mariadb:
+    image: tschaffter/awesome-mariadb:latest
+    container_name: awesome-mariadb
+    restart: always
+    env_file:
+      - .env
+    volumes:
+      - awesome-mariadb:/data/db
+      - ./docker-entrypoint-initdb.d:/docker-entrypoint-initdb.d
+    networks:
+      - awesome
+    ports:
+      - "3306:3306"
+
+volumes:
+  awesome-mariadb:
+    name: awesome-mariadb
+
+networks:
+  awesome:
+    name: awesome

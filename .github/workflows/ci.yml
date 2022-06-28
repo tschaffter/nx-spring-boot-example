@@ -1,0 +1,87 @@
+name: CI
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+env:
+  NX_BRANCH: ${{ github.event.number }}
+  NX_RUN_GROUP: ${{ github.run_id }}
+  NX_CLOUD_AUTH_TOKEN: ${{ secrets.NX_CLOUD_AUTH_TOKEN }}
+  NX_CLOUD_ENCRYPTION_KEY: ${{ secrets.NX_CLOUD_ENCRYPTION_KEY }}
+  NX_CLOUD_ENV_NAME: 'linux'
+  MAVEN_CONFIG: "--no-transfer-progress"
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    container:
+      image: sagebionetworks/challenge-devcontainer:bf457d84
+      options: --user root
+    if: ${{ github.event_name != 'pull_request' }}
+    env:
+      NX_BRANCH: main
+    steps:
+      - uses: actions/checkout@v2
+        name: Checkout [main]
+        with:
+          fetch-depth: 0
+      - name: Derive appropriate SHAs for base and head for `nx affected` commands
+        uses: nrwl/nx-set-shas@v2
+      - name: Setup Node.js cache
+        id: cache-node
+        uses: actions/cache@v3
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+      - name: Setup Maven cache
+        uses: actions/cache@v3
+        with:
+          path: /root/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+      - name: Install Node.js dependencies
+        if: steps.cache-node.outputs.cache-hit != 'true'
+        run: yarn install --frozen-lockfile
+      - name: Prepare the projects
+        run: yarn nx run-many --all --parallel --target=prepare
+      - run: yarn nx affected --target=lint --parallel --max-parallel=3
+      - run: yarn nx affected --target=build --parallel --max-parallel=3
+      - run: yarn nx run-many --all --target=test --parallel --max-parallel=2
+  pr:
+    runs-on: ubuntu-latest
+    container:
+      image: sagebionetworks/challenge-devcontainer:bf457d84
+      options: --user root
+    if: ${{ github.event_name == 'pull_request' }}
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          fetch-depth: 0
+      - name: Derive appropriate SHAs for base and head for `nx affected` commands
+        uses: nrwl/nx-set-shas@v2
+      - name: Setup Node.js cache
+        id: cache-node
+        uses: actions/cache@v3
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/yarn.lock') }}
+      - name: Setup Maven cache
+        uses: actions/cache@v3
+        with:
+          path: /root/.m2/repository
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+      - name: Install Node.js dependencies
+        if: steps.cache-node.outputs.cache-hit != 'true'
+        run: yarn install --frozen-lockfile
+      - name: Prepare the projects
+        run: yarn nx run-many --all --parallel --target=prepare
+      - run: yarn nx affected --target=lint --parallel --max-parallel=3
+      - run: yarn nx affected --target=build --parallel --max-parallel=3
+      - run: yarn nx affected --target=test --parallel --max-parallel=2

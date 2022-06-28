@@ -1,0 +1,54 @@
+{
+  "name": "Nx Spring Boot Example",
+  "image": "sagebionetworks/challenge-devcontainer:bf457d84",
+
+  "features": {
+    // docker features must be specified in the developer facing
+    // devcontainer.json for VS Code to properly mount the docker sockets.
+    "docker-in-docker": "20.10"
+  },
+
+  // Set *default* container specific settings.json values on container create.
+  "settings": {},
+
+  // Add the IDs of extensions you want installed when the container is created.
+  "extensions": [
+    "esbenp.prettier-vscode@9.5.0",
+    "mhutchie.git-graph@1.30.0",
+    "nrwl.angular-console@17.17.0",
+    "stkb.rewrap@1.16.3",
+    "GitHub.vscode-pull-request-github@0.42.0",
+    "humao.rest-client@0.24.6",
+    "vscjava.vscode-java-pack@0.23.0",
+    "Pivotal.vscode-boot-dev-pack@0.1.0",
+    "mtxr.sqltools@0.23.0",
+    "mtxr.sqltools-driver-mysql@0.2.0",
+    "mtxr.sqltools-driver-pg@0.2.0",
+    "vscjava.vscode-lombok@1.0.1",
+    "shengchen.vscode-checkstyle@1.4.1"
+  ],
+
+  // Use 'forwardPorts' to make a list of ports inside the container available
+	// locally.
+  "forwardPorts": [
+    3306
+  ],
+
+  // Object that maps a port number, "host:port" value, range, or regular
+  // expression to a set of default options.
+  "portsAttributes": {
+    "3306": {
+      "label": "challenge-mariadb",
+      "onAutoForward": "silent"
+    }
+  },
+
+  // Comment out to connect as root instead. More info:
+  // https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "vscode",
+
+  // Indicates whether VS Code and other devcontainer.json supporting tools
+  // should stop the containers when the related tool window is closed / shut
+  // down.
+  "shutdownAction": "stopContainer"
+}
