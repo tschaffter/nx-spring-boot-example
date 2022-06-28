@@ -1,4 +1,4 @@
-package org.example.awesome.util;
+package com.example.awesome.util;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

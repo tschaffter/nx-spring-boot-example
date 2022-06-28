@@ -10,10 +10,10 @@
 		<!-- lookup parent from repository -->
 	</parent>
 
-	<groupId>org.example.awesome</groupId>
-	<artifactId>awesome-shared-util</artifactId>
+	<groupId>com.example.awesome</groupId>
+	<artifactId>awesome-util</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>awesome-shared-util</name>
+	<name>awesome-util</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>

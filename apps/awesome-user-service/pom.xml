@@ -10,7 +10,7 @@
 		<!-- lookup parent from repository -->
 	</parent>
 
-	<groupId>org.example.awesome</groupId>
+	<groupId>com.example.awesome</groupId>
 	<artifactId>awesome-user-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>awesome-user-service</name>
@@ -32,11 +32,11 @@
 		</dependency>
 
 		<dependency>
-			<groupId>org.example.awesome</groupId>
-			<artifactId>awesome-shared-util</artifactId>
+			<groupId>com.example.awesome</groupId>
+			<artifactId>awesome-util</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<scope>system</scope>
-			<systemPath>${pom.basedir}/lib/awesome-shared-util-0.0.1-SNAPSHOT.jar</systemPath>
+			<systemPath>${pom.basedir}/lib/awesome-util-0.0.1-SNAPSHOT.jar</systemPath>
 		</dependency>
 	</dependencies>
 

@@ -37,10 +37,8 @@
       "executor": "@nrwl/workspace:run-commands",
       "options": {
         "commands": [
-          // "./mvnw install"
-          "cp libs/shared/util/target/awesome-shared-util-0.0.1-SNAPSHOT.jar apps/awesome-user-service/lib/."
+          "cp libs/shared/util/target/*.jar apps/awesome-user-service/lib/."
         ]
-        // "cwd": "libs/shared/util"
       },
       "dependsOn": [
         {
