@@ -8,7 +8,7 @@
 		<relativePath/>
 		<!-- lookup parent from repository -->
 	</parent>
-	<groupId>org.example.project</groupId>
+	<groupId>org.example.awesome</groupId>
 	<artifactId>util</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>util</name>
