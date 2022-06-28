@@ -29,15 +29,17 @@ Then open your fork repo inside our devcontainer.
 
 ### Prepare the workspace
 
-Install Node.js packages.
+Source `dev-env.sh`. This step can be skipped when working in the devcontainer.
 
-    yarn install --frozen-lockfile
+    . ./dev-env.sh
+
+Install Node.js packages (after source):
+
+    workspace-install
 
 ### Start the user service
 
-```console
-yarn nx serve awesome-user-service
-```
+    nx serve awesome-user-service
 
 This command:
 
