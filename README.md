@@ -1,8 +1,10 @@
-
-
 # Nx Spring Boot Example
 
-Example of [Nx workspace] with Spring Boot apps and libraries
+[![GitHub CI](https://img.shields.io/github/workflow/status/tschaffter/nx-spring-boot-example/CI.svg?color=007acc&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://github.com/tschaffter/nx-spring-boot-example/actions)
+[![GitHub License](https://img.shields.io/github/license/tschaffter/nx-spring-boot-example.svg?color=007acc&labelColor=555555&logoColor=ffffff&style=for-the-badge&logo=github)](https://github.com/tschaffter/nx-spring-boot-example/blob/main/LICENSE)
+
+Example of [Nx workspace] with Spring Boot apps and libraries generated using
+the Nx plugin [@nxrocks/nx-spring-boot].
 
 ## Requirements
 
@@ -57,3 +59,4 @@ This command:
 
 [Nx workspace]: https://nx.dev/
 [Apache License 2.0]: LICENSE.txt
+[@nxrocks/nx-spring-boot]: https://github.com/tinesoft/nxrocks/tree/develop/packages/nx-spring-boot
