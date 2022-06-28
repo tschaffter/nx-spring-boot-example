@@ -1,7 +1,17 @@
 {
   "recommendations": [
-    
+    "esbenp.prettier-vscode",
+    "mhutchie.git-graph",
     "nrwl.angular-console",
-    "esbenp.prettier-vscode"
+    "stkb.rewrap",
+    "GitHub.vscode-pull-request-github",
+    "humao.rest-client",
+    "vscjava.vscode-java-pack",
+    "Pivotal.vscode-boot-dev-pack",
+    "mtxr.sqltools",
+    "mtxr.sqltools-driver-mysql",
+    "mtxr.sqltools-driver-pg",
+    "vscjava.vscode-lombok",
+    "shengchen.vscode-checkstyle"
   ]
 }
