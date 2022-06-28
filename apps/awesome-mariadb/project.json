@@ -50,7 +50,7 @@
         "context": "apps/awesome-mariadb",
         "push": false,
         "tags": [
-          "sagebionetworks/awesome-mariadb:latest"
+          "tschaffter/awesome-mariadb:latest"
         ]
       }
     }
