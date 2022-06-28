@@ -1,0 +1,9 @@
+{
+  "name": "nx-spring-boot-example",
+  "version": "1.0.0",
+  "description": "Example of Nx workspace with Spring Boot apps and libraries ",
+  "repository": "https://github.com/tschaffter/nx-spring-boot-example.git",
+  "author": "tschaffter <thomas.schaffter@protonmail.com>",
+  "license": "Apache-2.0",
+  "private": true
+}
